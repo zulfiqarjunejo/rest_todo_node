@@ -1,5 +1,21 @@
 const Todo = require('../models/todo.model')
 
+exports.view = (request, response) => {
+    Todo.findById(request.params.id, (error, todo) => {
+        if (error) {
+            response.json({message: 'an error occured when fetching the required todo', error: error})
+        }
+
+        if (!todo) {
+            response.json({
+                message: 'todo with id ' + request.params.id + ' not found.'
+            })
+        }
+
+        response.json(todo)
+    }).select('-__v')
+}
+
 exports.list = (request, response) => {
     Todo.find({}, (error, todos) => {
         if (error) {
