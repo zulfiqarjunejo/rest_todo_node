@@ -1,6 +1,4 @@
-let express = require('express');
-
-let router = express.Router();
+let router = require('express').Router()
 router.get('/', (request, response) => {
     response.json({message: '\'tis a default route!'})
 })
