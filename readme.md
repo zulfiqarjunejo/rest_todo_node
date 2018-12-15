@@ -8,3 +8,6 @@ curl -X POST http://localhost:9001/api/todo -d "name=todo application POST&descr
 
 ### Fetch List Of Todos
 cUrl -X GET http://localhost:9001/api/todo
+
+### Delete A Todo
+cUrl -X DELETE http://localhost:9001/api/todo/5c153a3f3953ff0790c5cc9e

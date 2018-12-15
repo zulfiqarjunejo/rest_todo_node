@@ -10,9 +10,9 @@ exports.view = (request, response) => {
             response.json({
                 message: 'todo with id ' + request.params.id + ' not found.'
             })
+        } else {
+            response.json(todo)
         }
-
-        response.json(todo)
     }).select('-__v')
 }
 
@@ -41,4 +41,18 @@ exports.create = (request, response) => {
         }
         response.json({message: 'requested todo saved successfully.', todo: todo})
     })
+}
+
+exports.delete = (request, response) => {
+    Todo
+        .findById(request.params.id)
+        .remove((error) => {
+            if (error) {
+                response.json({message: 'an error occured while deleting the todo', error: error})
+            }
+
+            response.json({
+                message: 'todo with id ' + request.params.id + ' deleted successfully.'
+            })
+        })
 }
