@@ -20,7 +20,7 @@ exports.view = (request, response) => {
 exports.list = (request, response) => {
     Todo.find({}, (error, todos) => {
         if (error) {
-            response.json({error: 'ISE', message: 'an error occured while fetching list of todos', error: error})
+            response.json({error: 'ISE', message: 'an error occured while fetching list of todos'})
         }
 
         response.json(todos)
@@ -38,9 +38,9 @@ exports.create = (request, response) => {
 
     todo.save((error) => {
         if (error) {
-            response.json({message: 'requested todo not saved.', error: error})
+            response.json({message: 'requested todo not saved'})
         }
-        response.json({message: 'requested todo saved successfully.', todo: todo})
+        response.json({message: 'requested todo saved successfully'})
     })
 }
 
@@ -49,11 +49,11 @@ exports.delete = (request, response) => {
         .findById(request.params.id)
         .remove((error) => {
             if (error) {
-                response.json({message: 'an error occured while deleting the todo', error: error})
+                response.json({error: 'ISE', message: 'an error occured while deleting the todo'})
             }
 
             response.json({
-                message: 'todo with id ' + request.params.id + ' deleted successfully.'
+                message: 'todo with id ' + request.params.id + ' deleted successfully'
             })
         })
 }

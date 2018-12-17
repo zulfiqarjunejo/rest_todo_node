@@ -60,7 +60,59 @@ router.get('/todo', controller.list)
  */
 router.get('/todo/:id', controller.view)
 
+/**
+ * @api {post} todo/ Create a new todo
+ * @apiName Create Todo
+ * @apiGroup Todo
+ *
+ * @apiParam {String} name Name of the Todo.
+ * @apiParam {String} description Description of the Todo.
+ * @apiParam {String} deadline Deadline date of the Todo.
+ * @apiParam {List} tags List of tags of the Todo.
+ *
+ * @apiSuccess {String} message Message which indicates if new todo is created or not
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "message": "requested todo saved successfully",
+ *     }
+ *
+ * @apiError {String} message Message which indicates if new todo is created or not
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 200 Not Found
+ *     {
+ *       "message": "requested todo not saved"
+ *     }
+ */
 router.post('/todo', controller.create)
+
+/**
+ * @api {delete} todo/:id Delete a specific todo
+ * @apiName Delete Todo
+ * @apiGroup Todo
+ *
+ * @apiParam {String} id UUID of todo.
+ *
+ * @apiSuccess {String} message Message which indicates that specified todo is deleted.
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "message": "todo with id _de8800xace3c deleted successfully",
+ *     }
+ *
+ * @apiError {ISE} Internal Server Error.
+ * @apiError {String} message Message which represents further information
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 200 Not Found
+ *     {
+ *       "error": "ISE",
+ *       "message": "an error occured while deleting the todo"
+ *     }
+ */
 router.delete('/todo/:id', controller.delete)
 
 module.exports = router
