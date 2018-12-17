@@ -8,6 +8,7 @@ exports.view = (request, response) => {
 
         if (!todo) {
             response.json({
+                error: 'TodoNotFound',
                 message: 'todo with id ' + request.params.id + ' not found.'
             })
         } else {
@@ -19,7 +20,7 @@ exports.view = (request, response) => {
 exports.list = (request, response) => {
     Todo.find({}, (error, todos) => {
         if (error) {
-            response.json({message: 'an error occured while fetching list of todos', error: error})
+            response.json({error: 'ISE', message: 'an error occured while fetching list of todos', error: error})
         }
 
         response.json(todos)

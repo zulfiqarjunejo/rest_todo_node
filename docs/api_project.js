@@ -1,0 +1,16 @@
+define({
+  "title": "REST TODO NODE",
+  "url": "http://localhost:9001/api/",
+  "name": "rest_todo_node",
+  "version": "1.0.0",
+  "description": "",
+  "sampleUrl": false,
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2018-12-17T15:55:10.699Z",
+    "url": "http://apidocjs.com",
+    "version": "0.17.7"
+  }
+});

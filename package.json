@@ -2,6 +2,10 @@
   "name": "rest_todo_node",
   "version": "1.0.0",
   "description": "",
+  "apidoc": {
+    "title": "REST TODO NODE",
+    "url": "http://localhost:9001/api/"
+  },
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
