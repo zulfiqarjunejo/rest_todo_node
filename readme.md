@@ -14,3 +14,8 @@ cUrl -X GET http://localhost:9001/api/todo
 
 ### Delete A Todo
 cUrl -X DELETE http://localhost:9001/api/todo/5c153a3f3953ff0790c5cc9e
+
+## Further Learning
+I have identified few areas in this project which should be improved for learning purpose. Although it can be a extensive list, following are some which I personally want to learn:
+* [Microsoft REST API Guidelines](https://github.com/Microsoft/api-guidelines/blob/vNext/Guidelines.md)
+* [Consistent Error Codes according to "Microsoft REST API Guidelines"](https://github.com/Microsoft/api-guidelines/blob/vNext/Guidelines.md)
